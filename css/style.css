@@ -1,0 +1,68 @@
+*{
+    margin: 0%;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;  
+    text-align: center; 
+    box-sizing: border-box;
+}
+
+/* Elementos*/
+    h1{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+ /* IDs */
+ #stage{
+     margin: 0 auto;
+     width: 350px;
+ }
+
+
+
+
+
+ /* Classes*/
+
+ .square{
+    width: 100px;
+    height: 100px;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: beige;
+    border: 1px solid black;
+    display: inline-block;
+ }
+
+ .o{    
+    position: relative;
+ }
+
+ .o::after{
+    font-size:50px;
+    position: absolute;
+    content: "\1f6e1";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    line-height: 100px;
+
+ }
+
+ .x{    
+    position: relative;
+ }
+
+ .x::after{
+    font-size:50px;
+    position: absolute;
+    content: "\2694";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    line-height: 100px;
+
+ }
