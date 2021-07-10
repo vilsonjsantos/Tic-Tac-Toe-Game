@@ -3,7 +3,8 @@ let board = ['', '', '', '', '', '', '', '', '',]
 let playertime = 0;
 let symbols = ['o', 'x'];
 let gameOver = false
-let winner = ''
+let win = ''
+let playsCount = 0
 
 function handleMove(position){
     if (gameOver){
@@ -23,6 +24,7 @@ function handleMove(position){
             playertime = 0;
         }
     }
+    playsCheck();
 }
 
 function playerVictory() {
@@ -45,13 +47,13 @@ function playerVictory() {
 
         if (board[position1] == 'o' && board[position2] == 'o' && board[position3] == 'o'){
             gameOver = true;
-            winner = 'o';
-            endGame(winner);
+            win = 'o';
+            endGame(win);
         }
         else if (board[position1] == 'x' && board[position2] == 'x' && board[position3] == 'x'){
             gameOver = true;
-            winner = 'x';
-            endGame(winner);
+            win = 'x';
+            endGame(win);
             
 
         }
@@ -69,6 +71,18 @@ function restartGame(){
         board[i] = '';
     }
     restartGameInterface()
+}
 
-
+function playsCheck(){
+    let squaresCount = 0
+    board.forEach((squares) =>{
+        if (squares != ''){
+            squaresCount += 1;
+            playsCount = squaresCount;
+            console.log(playsCount);
+        } 
+    })
+    if (playsCount == 9){
+        endGame('')
+    }
 }

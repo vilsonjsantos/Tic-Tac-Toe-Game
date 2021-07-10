@@ -26,21 +26,32 @@ function updateSquares(){
         }
     })
     playerVictory()
+
+
 }
 
 function endGame(winner){
-    let resultado = document.getElementById("resultado")
 
-    if (winner == 'o'){
-        winner = 'o Escudo'
+    if(winner != ''){
+        let resultado = document.getElementById("resultado")
+
+        if (winner == 'o'){
+            winner = 'o Escudo'
+        }
+        else{
+            winner = 'a Espada'
+        }
+        resultado.innerHTML = '<h1> o Vencedor foi '+ winner + '</h1><br>'
+        resultado.innerHTML += '<input type="button" value="Restart" onclick="restartGame()" \n\
+                                style="padding:5px;"><br>'
     }
     else{
-        winner = 'a Espada'
+        let resultado = document.getElementById("resultado")
+        resultado.innerHTML = '<h1> Deu velha! </h1><br>'
+        resultado.innerHTML += '<input type="button" value="Restart" onclick="restartGame()" \n\
+                                style="padding:5px;"><br>'
     }
-    resultado.innerHTML = '<h1> o Vencedor foi '+ winner + '</h1><br>'
-    resultado.innerHTML += '<input type="button" value="Restart" onclick="restartGame()" \n\
-                            style="padding:5px;"><br>'
-    console.log(resultado)
+
 }
 
 function restartGameInterface() {
