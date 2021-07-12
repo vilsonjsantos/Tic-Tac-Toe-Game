@@ -8,10 +8,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 function handleClick(event){
-    let square = event.target;
-    let position = square.id;
-    handleMove(position)
-    updateSquares()
+    if (gameOver == false)
+    {
+        let square = event.target;
+        let position = square.id;
+        handleMove(position)
+        updateSquares()
+    }
+    else{ 
+        return
+    }
 }
 
 function updateSquares(){
@@ -36,20 +42,28 @@ function endGame(winner){
         let resultado = document.getElementById("resultado")
 
         if (winner == 'o'){
-            winner = 'o Escudo'
+            winner = ' shield ';
+            shieldWinCount += 1;
+            let shieldDiv = document.getElementById("shieldPoints");
+            shieldDiv.innerHTML = '<h3>'+ shieldWinCount +'</h3>';
+            gameOver = true
         }
         else{
-            winner = 'a Espada'
+            winner = ' sword'
+            swordWinCount += 1
+            let swordDiv = document.getElementById("swordPoints");
+            swordDiv.innerHTML = '<h3>'+ swordWinCount +'</h3>'
+            gameOver = true
         }
-        resultado.innerHTML = '<h1> o Vencedor foi '+ winner + '</h1><br>'
+        resultado.innerHTML = '<h1> The '+ winner + ' wins</h1><br>'
         resultado.innerHTML += '<input type="button" value="Restart" onclick="restartGame()" \n\
-                                style="padding:5px;"><br>'
+                                ><br>'
     }
     else{
         let resultado = document.getElementById("resultado")
-        resultado.innerHTML = '<h1> Deu velha! </h1><br>'
+        resultado.innerHTML = '<h1> Draw! </h1><br>'
         resultado.innerHTML += '<input type="button" value="Restart" onclick="restartGame()" \n\
-                                style="padding:5px;"><br>'
+                                ><br>'
     }
 
 }

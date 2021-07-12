@@ -6,6 +6,9 @@ let gameOver = false
 let win = ''
 let playsCount = 0
 
+let shieldWinCount = 0
+let swordWinCount = 0
+
 function handleMove(position){
     if (gameOver){
         return
