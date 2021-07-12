@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;  
+    text-align: center; 
+    box-sizing: border-box;
+}
+
+:root{
+   --var-color1:;
+   --var-color2:;
+   --var-fontColor1: #edf6f9 ;
+   --var-fontColor2: #480ca8;
+}
+
+/* Elementos*/
+    h1{
+       margin-top: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+        color:var(--var-fontColor1);
+        font-size: 1em;
+    }
+
+    body{
+      background-image: linear-gradient(to right, #560bad,#4361ee );
+    }
+
+    input{
+      background-color:#edf6f9;
+      padding: 5px;
+      border-radius: 5px;
+      border:none;
+      font-weight: bold;
+      color:var(--var-fontColor2);
+      transition-property: all;
+      transition-duration: 1s;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    input:hover{
+      background-color:var(--var-fontColor2);
+      color:var(--var-fontColor1);
+      padding: 10px;
+    }
+
+    h3{
+       color: var(--var-fontColor1);
+    }
+
+
+
+ /* IDs */
+#container{
+   padding: 15px;
+}
+
+#container h1{
+   display: inline-block;
+}
+
+ #shieldId{
+   float: left;
+   margin-left: 15px;
+}
+
+#swordId{
+  float: right;
+  margin-right: 15px;
+}
+
+ #stage{
+     margin: 0 auto;
+     width: 350px;
+ }
+
+ #resultado{
+   color: var(--var-fontColor1);
+ }
+
+ 
+
+
+
+
+
+ /* Classes*/
+
+ .square{
+    width: 50px;
+    height: 50px;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: beige;
+    /* border: 2px solid #f72585; */
+    border-radius: 10px;
+    display: inline-block;
+    color: var(--var-fontColor2);
+    font-weight: bold;
+ }
+
+ .o{    
+    position: relative;
+    
+ }
+
+ .o::after{
+    font-size:50px;
+    position: absolute;
+    content: "\1f6e1";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    line-height: 50px;
+    font-size:2em;
+
+ }
+
+ .x{    
+    position: relative;
+ }
+
+ .x::after{
+    font-size:50px;
+    position: absolute;
+    content: "\2694";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    line-height: 50px;
+    font-size:2em;
+
+ }
